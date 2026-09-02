@@ -69,6 +69,22 @@ try {
     stdio: "inherit",
   });
 
+  log(`Updating package version to ${version}...`);
+
+  execSync(`npm version ${version} --no-git-tag-version`, {
+    stdio: "inherit",
+  });
+
+  log("Committing version bump...");
+
+  execSync("git add package.json package-lock.json", {
+    stdio: "inherit",
+  });
+
+  execSync(`git commit -m "chore(release): v${version}"`, {
+    stdio: "inherit",
+  });
+
   log("Pushing release branch...");
   execSync(`git push -u origin ${releaseBranch}`, {
     stdio: "inherit",
