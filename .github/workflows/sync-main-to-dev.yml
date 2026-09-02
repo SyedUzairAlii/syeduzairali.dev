@@ -1,0 +1,89 @@
+name: Sync main back to dev
+
+on:
+  workflow_run:
+    workflows:
+      - CI
+    types:
+      - completed
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  sync-main-to-dev:
+    name: Sync main to dev
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout dev
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          fetch-depth: 0
+          token: ${{ secrets.REPO_SYNC_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch main and dev
+        run: |
+          git fetch origin main
+          git fetch origin dev
+
+      - name: Create sync branch
+        id: sync
+        shell: bash
+        run: |
+          SHORT_SHA="${{ github.event.workflow_run.head_sha }}"
+          SHORT_SHA="${SHORT_SHA:0:7}"
+
+          SYNC_BRANCH="sync/main-to-dev-${SHORT_SHA}"
+
+          echo "branch=${SYNC_BRANCH}" >> "$GITHUB_OUTPUT"
+
+          git switch -c "$SYNC_BRANCH" origin/dev
+
+          git merge --no-ff origin/main \
+            -m "chore: sync main back to dev"
+
+          if git diff --quiet origin/dev HEAD; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "No file changes need to be synced back to dev."
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push sync branch
+        if: steps.sync.outputs.has_changes == 'true'
+        run: |
+          git push -u origin "${{ steps.sync.outputs.branch }}"
+
+      - name: Create pull request
+        if: steps.sync.outputs.has_changes == 'true'
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.REPO_SYNC_TOKEN }}
+        run: |
+          PR_URL=$(gh pr create \
+            --base dev \
+            --head "${{ steps.sync.outputs.branch }}" \
+            --title "chore: sync main back to dev" \
+            --body "Automatically syncs the latest production release from \`main\` back into \`dev\`.")
+
+          echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Enable auto-merge
+        if: steps.sync.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.REPO_SYNC_TOKEN }}
+        run: |
+          gh pr merge "${{ steps.pr.outputs.url }}" \
+            --auto \
+            --merge
