@@ -28,7 +28,7 @@ const highlights = [
 
 export default function IntroSection() {
   return (
-    <main className="w-full bg-[#E4EFF1]">
+    <main id="home" className="w-full bg-[#E4EFF1]">
       <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-[1328px] grid-cols-1 items-center gap-16 px-6 py-16 lg:grid-cols-[minmax(0,1fr)_460px] lg:px-12 lg:py-20">
         {/* Left Content */}
         <div className="flex max-w-[680px] flex-col items-start">
