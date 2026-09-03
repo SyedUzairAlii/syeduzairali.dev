@@ -1,3 +1,4 @@
+import AboutSection from "@/components/AboutSection";
 import CustomCursor from "@/components/CustomCursor";
 import IntroSection from "@/components/IntroSection";
 import Navbar from "@/components/Navbar";
@@ -9,6 +10,8 @@ export default function Home() {
       <Navbar />
 
       <IntroSection />
+
+      <AboutSection />
     </div>
   );
 }
