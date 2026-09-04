@@ -182,7 +182,7 @@ export default function CustomCursor() {
       <div
         ref={followerRef}
         aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-[9998] rounded-full border opacity-0"
+        className="pointer-events-none fixed left-0 top-0 z-[20000] rounded-full border opacity-0"
         style={{
           width: "36px",
           height: "36px",
@@ -197,7 +197,7 @@ export default function CustomCursor() {
       <div
         ref={cursorRef}
         aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-[9999] select-none font-mono text-[13px] font-bold opacity-0"
+        className="pointer-events-none fixed left-0 top-0 z-[20001] select-none font-mono text-[13px] font-bold opacity-0"
         style={{
           color: "#0B132B",
           transition: "color 150ms ease, opacity 150ms ease",

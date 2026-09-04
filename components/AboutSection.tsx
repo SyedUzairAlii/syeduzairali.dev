@@ -96,19 +96,6 @@ export default function AboutSection() {
             </div>
           ))}
         </div>
-
-        {/* Resume Link */}
-        <div className="mt-10">
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#1D4ED8] transition-colors duration-200 hover:text-[#0F766E]"
-          >
-            View my full experience
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
       </div>
     </section>
   );
