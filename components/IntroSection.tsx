@@ -110,24 +110,6 @@ export default function IntroSection() {
               LinkedIn ↗
             </a>
           </div>
-
-          {/* Highlights */}
-          <div className="mt-9 flex flex-wrap gap-4">
-            {highlights.map((highlight) => (
-              <div
-                key={highlight.label}
-                className="min-w-[135px] rounded-2xl border border-[#B9CCD2] bg-[#EDF5F6] px-4 py-4"
-              >
-                <div className="text-[18px] font-bold text-[#0F172A]">
-                  {highlight.value}
-                </div>
-
-                <div className="mt-1 text-xs text-[#64748B]">
-                  {highlight.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Portrait */}
@@ -139,8 +121,7 @@ export default function IntroSection() {
       absolute -inset-[50%]
       animate-[spin_12s_linear_infinite]
       bg-[conic-gradient(from_0deg,#CFE0F5,#5EEAD4,#93C5FD,#D8F2EC,#CFE0F5)]
-      motion-reduce:animate-none
-    "
+      motion-reduce:animate-none"
             />
             {/* Soft layer above rotating gradient */}
             <div className="absolute inset-[2px] rounded-[32px] bg-[#E4EFF1]/35 backdrop-blur-[2px]" />

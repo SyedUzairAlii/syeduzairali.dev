@@ -10,6 +10,10 @@ const navItems = [
     href: "#about",
   },
   {
+    label: "Skills",
+    href: "#skills",
+  },
+  {
     label: "Experience",
     href: "#experience",
   },
@@ -31,7 +35,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0B132B]">
+    <header
+      data-cursor-light
+      className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0B132B]"
+    >
       <nav className="mx-auto flex min-h-20 max-w-[1328px] items-center justify-between px-6 lg:px-12">
         {/* Brand */}
         <a
