@@ -332,9 +332,9 @@ The portfolio is being developed incrementally.
 Planned sections include:
 
 - [x] Intro / Hero
-- [ ] Navigation
-- [ ] About
-- [ ] Skills
+- [x] Navigation
+- [x] About
+- [x] Skills
 - [ ] Professional Experience
 - [ ] Projects
 - [ ] Certifications

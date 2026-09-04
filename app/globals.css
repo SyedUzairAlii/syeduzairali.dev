@@ -29,3 +29,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    cursor: none;
+  }
+}

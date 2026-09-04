@@ -5,12 +5,6 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    src: "/profile.jpg",
-    alt: "Syed Uzair Ali",
-    label: "Niche Office · Pittsburgh, PA",
-    position: "object-[center_18%]",
-  },
-  {
     src: "/pittsburgh-skyline.jpg",
     alt: "Syed Uzair Ali with the Pittsburgh skyline",
     label: "Pittsburgh, PA",
@@ -28,6 +22,12 @@ const slides = [
     label: "Pittsburgh, PA",
     position: "object-center",
   },
+  // {
+  //   src: "/profile.jpg",
+  //   alt: "Syed Uzair Ali",
+  //   label: "Niche Office · Pittsburgh, PA",
+  //   position: "object-[center_18%]",
+  // }, hidding for now
 ];
 
 const SLIDE_DURATION = 7000;
