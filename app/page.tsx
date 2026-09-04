@@ -1,5 +1,9 @@
 import AboutSection from "@/components/AboutSection";
+import ClientFeedbackSection from "@/components/ClientFeedbackSection";
+import ContactSection from "@/components/ContactSection";
 import CustomCursor from "@/components/CustomCursor";
+import EducationSection from "@/components/EducationSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import IntroSection from "@/components/IntroSection";
 import Navbar from "@/components/Navbar";
 import SkillsSection from "@/components/SkillsSection";
@@ -18,6 +22,14 @@ export default function Home() {
         <AboutSection />
 
         <SkillsSection />
+
+        <ExperienceSection />
+
+        <ClientFeedbackSection />
+
+        <EducationSection />
+
+        <ContactSection />
       </div>
       <Analytics />
     </>

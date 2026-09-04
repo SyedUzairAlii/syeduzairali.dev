@@ -41,3 +41,46 @@ body {
     cursor: none;
   }
 }
+
+@keyframes feedback-marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes feedback-marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.feedback-track-left {
+  animation: feedback-marquee-left 42s linear infinite;
+}
+
+.feedback-track-right {
+  animation: feedback-marquee-right 46s linear infinite;
+}
+
+.feedback-marquee:hover .feedback-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feedback-track-left,
+  .feedback-track-right {
+    animation: none;
+  }
+
+  .feedback-marquee {
+    overflow-x: auto;
+  }
+}

@@ -40,16 +40,13 @@ export default function IntroSection() {
               OPEN TO SOFTWARE ENGINEERING OPPORTUNITIES
             </span>
           </div>
-
           {/* Intro */}
           <p className="mt-7 text-lg font-medium text-[#64748B]">
             Hello, I&apos;m
           </p>
-
           <h1 className="mt-1 text-[48px] font-bold leading-[1.02] tracking-[-0.045em] text-[#0F172A] sm:text-[58px] lg:text-[68px]">
             Syed Uzair Ali
           </h1>
-
           {/* Roles */}
           <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
             <span className="text-[21px] font-semibold text-[#1D4ED8] sm:text-[26px]">
@@ -62,8 +59,7 @@ export default function IntroSection() {
               MERN Stack Developer
             </span>
           </div>
-
-          {/* Technology Pills */}
+          {/* Technology Pills
           <div className="mt-5 flex flex-wrap gap-2">
             {technologies.map((technology) => (
               <span
@@ -73,16 +69,12 @@ export default function IntroSection() {
                 {technology}
               </span>
             ))}
-          </div>
-
+          </div> */}
           {/* Description */}
           <p className="mt-8 max-w-[610px] text-[17px] leading-7 text-[#475569]">
-            I build scalable web and mobile applications with React, TypeScript,
-            and modern JavaScript, with hands-on experience across the MERN
-            stack and a strong focus on product quality, performance, and
-            reliable delivery.
+            I build and ship production web and mobile products, with experience
+            spanning frontend, backend, testing, and reliable software delivery.
           </p>
-
           {/* Actions */}
           <div className="mt-7 flex flex-wrap gap-3">
             <a
