@@ -85,7 +85,7 @@ export default function ContactSection() {
             {/* Main CTA */}
             <div className="mt-10">
               <a
-                href="mailto:maazuair3322@gmail.com"
+                href="mailto:maazuzair3322@gmail.com"
                 className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-6 py-3.5 text-[15px] font-semibold text-[#0B132B] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#EAF2F4]"
               >
                 <FaEnvelope className="text-[17px]" />
