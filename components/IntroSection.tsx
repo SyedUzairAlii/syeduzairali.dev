@@ -78,20 +78,20 @@ export default function IntroSection() {
           {/* Actions */}
           <div className="mt-7 flex flex-wrap gap-3">
             <a
-              href="#projects"
+              href="https://github.com/SyedUzairAlii"
               className="rounded-[14px] bg-[#0B132B] px-5 py-[14px] text-[15px] font-semibold text-white transition duration-200 hover:bg-[#172554]"
             >
-              View My Work →
+              View My Work ↗
             </a>
 
-            <a
+            {/* <a
               href="https://github.com/SyedUzairAlii"
               target="_blank"
               rel="noreferrer"
               className="rounded-[14px] border border-[#B9CCD2] bg-[#EDF5F6] px-[18px] py-[14px] text-[15px] font-semibold text-[#0F172A] transition duration-200 hover:bg-white"
             >
               GitHub ↗
-            </a>
+            </a> */}
 
             <a
               href="https://www.linkedin.com/in/syed-uzair-ali-a85764104/"
