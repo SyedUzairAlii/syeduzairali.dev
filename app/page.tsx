@@ -25,7 +25,7 @@ export default function Home() {
 
         <ExperienceSection />
 
-        <ClientFeedbackSection />
+        {/* <ClientFeedbackSection /> */}
 
         <EducationSection />
 
