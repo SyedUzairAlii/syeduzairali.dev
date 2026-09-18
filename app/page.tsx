@@ -1,5 +1,4 @@
 import AboutSection from "@/components/AboutSection";
-import ClientFeedbackSection from "@/components/ClientFeedbackSection";
 import ContactSection from "@/components/ContactSection";
 import CustomCursor from "@/components/CustomCursor";
 import EducationSection from "@/components/EducationSection";
