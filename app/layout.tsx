@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Syed Uzair Ali | Software Engineer",
-  description:
-    "Portfolio of Syed Uzair Ali, a software engineer specializing in React, TypeScript, Next.js, Node.js, and modern web development.",
+  metadataBase: new URL(site.url),
+  title: site.title,
+  description: site.description,
+  authors: [{ name: site.name, url: site.url }],
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
+    images: [{ url: site.image, alt: site.name }],
+  },
+  twitter: {
+    card: "summary",
+    title: site.title,
+    description: site.description,
+    images: [{ url: site.image, alt: site.name }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
